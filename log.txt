@@ -1,0 +1,211 @@
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 ~
+$ cd c:
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c
+$ cd Andersen/git_repos/test_repo/
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo
+$ git init
+Initialized empty Git repository in C:/Andersen/git_repos/test_repo/.git/
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git add .
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   testGIT.html
+
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git commit -m "init commit"
+[master (root-commit) a487950] init commit
+ 1 file changed, 20 insertions(+)
+ create mode 100644 testGIT.html
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git remote add origin https://github.com/aSerheieva/testing_repo.git
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 449 bytes | 449.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/aSerheieva/testing_repo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git checkout -b test
+Switched to a new branch 'test'
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git status
+On branch test
+nothing to commit, working tree clean
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git status
+On branch test
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   testGIT.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git commit -m "first commit new branche"
+On branch test
+Changes not staged for commit:
+        modified:   testGIT.html
+
+no changes added to commit
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git add .
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git commit -m "first commit new branche"
+[test 945852d] first commit new branche
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git push
+fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin test
+
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git merge test
+Updating a487950..945852d
+Fast-forward
+ testGIT.html | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git checkout test
+Switched to branch 'test'
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git push --set-upstream origin test
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 346 bytes | 346.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/aSerheieva/testing_repo.git
+ * [new branch]      test -> test
+Branch 'test' set up to track remote branch 'test' from 'origin'.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/aSerheieva/testing_repo.git
+   a487950..945852d  master -> master
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git merge test
+Already up to date.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git checkout test
+Switched to branch 'test'
+Your branch is up to date with 'origin/test'.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ echo "# test_git_auto" >> README.md
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ ls
+README.md  testGIT.html
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git status
+On branch test
+Your branch is up to date with 'origin/test'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git add README.md
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git commit -m "second commits"
+[test 2116bd6] second commits
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/aSerheieva/testing_repo.git
+   945852d..2116bd6  test -> test
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (test)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git merge test
+Updating 945852d..2116bd6
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git pull
+Already up to date.
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/aSerheieva/testing_repo.git
+   945852d..2116bd6  master -> master
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+        bisect
+
+Nastya@LAPTOP-MSP3MDF0 MINGW64 /c/Andersen/git_repos/test_repo (master)
+$
